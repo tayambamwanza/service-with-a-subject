@@ -1,0 +1,20 @@
+
+<div style="display: flex; width: 200px; justify-content: space-evenly; margin-bottom: 5px">
+<button (click)="addItem()"> create </button>
+<button (click)="updateItem()"> update </button>
+<button (click)="deleteItem()"> delete </button>
+</div>
+
+  <!-- <ng-web-console/> -->
+  <ul style="list-style: none">
+    @for(item of items(); track item.id) {
+      <li style="margin-bottom: 40px"> 
+        <p> 😃 <b> Person: </b>  {{item.fullName}}  </p>
+        <p> ⏳ <b> Age: </b> {{item.age}}  </p>
+        <p> 🧪 <b> Nerd Status: </b>  {{item.isNerdy}}  </p>
+      </li>
+    } @empty {
+      <p> Nothing to see here! (no items in list) </p>
+    }
+  </ul>
+
